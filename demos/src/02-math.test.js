@@ -1,16 +1,18 @@
-const { sum, divide, multiply, average } = require('./02-math');
+const {
+  sum, divide, multiply, average,
+} = require('./02-math');
 
-test("adds 1 + 3 should be 4", () => {
+test('adds 1 + 3 should be 4', () => {
   const rta = sum(1, 3);
   expect(rta).toBe(4);
 });
 
-test("should be 4", () => {
+test('should be 4', () => {
   const rta = multiply(2, 2);
   expect(rta).toBe(4);
 });
 
-test("should divide", () => {
+test('should divide', () => {
   const rta = divide(6, 3);
   expect(rta).toBe(2);
 
@@ -18,7 +20,7 @@ test("should divide", () => {
   expect(rta2).toBe(2.5);
 });
 
-test("should divide for zero", () => {
+test('should divide for zero', () => {
   const rta = divide(6, 0);
   expect(rta).toBeNull();
 
@@ -26,7 +28,7 @@ test("should divide for zero", () => {
   expect(rta2).toBeNull();
 });
 
-test("should average", () => {
+test('should average', () => {
   const rta = average(4, 8);
   expect(rta).toBe(6);
 
