@@ -1,0 +1,31 @@
+name: API CI
+
+# on: [push] #Si tuviera un proyecto no-monorepo entonces esta configuración basta y se puede saltar la configuración de abajo de on y defaults
+on:
+  push:
+    paths:
+      - "./api/**"
+      - ".github/worksflows/api-ci.yml"
+
+defaults:
+  run:
+    working-directory: ./api
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  Checkout
+        uses: actions/checkout@v2
+      - name:  Setup Nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.19
+          cache: 'npm'
+          cache-dependency-path: ./api/packacge-lock.json
+      - name: install
+        shell: bash
+        run: npm ci
+      - name: run unit test
+        shell: bash
+        run: npm run test
