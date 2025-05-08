@@ -16,7 +16,7 @@ describe('Test for hello endpoint', () => {
   });
 
   describe('Test for GET /', () => {
-    test('should return Hello World!', () => request(app)
+    test('should return Hello World!', () => request(server)
       .get('/')
       .expect(200)
       .then((response) => {
