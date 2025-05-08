@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "./api/**"
+      - "./api/e2e/**"
       - ".github/workflows/api-ci.yml"
 
 defaults:
