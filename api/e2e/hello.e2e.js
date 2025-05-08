@@ -8,7 +8,7 @@ describe('Test for hello endpoint', () => {
 
   beforeAll(() => {
     app = createApp();
-    server = app.listen(3001);
+    server = app.listen(3002);
   });
 
   afterAll(async () => {
@@ -16,7 +16,7 @@ describe('Test for hello endpoint', () => {
   });
 
   describe('Test for GET /', () => {
-    test('should return Hello World!', () => request(server)
+    test('should return Hello World!', () => request(app)
       .get('/')
       .expect(200)
       .then((response) => {
